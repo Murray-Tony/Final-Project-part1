@@ -8,7 +8,7 @@ class Book
   public virtual string AuthorInfo {get;set;}
   public virtual DateTime PublishedOn{get;set;}
   public virtual string PublishedBy {get;set;}
-  List<Book> BookList = new List<Book> ();
+  public List<Book> BookList = new List<Book> ();
   public void Add(Book book)
   {
     BookList.Add(book);

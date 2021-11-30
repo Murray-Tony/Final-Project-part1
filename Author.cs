@@ -24,6 +24,9 @@ class Author : Person
     Console.WriteLine(Email);
   }
   public void DisplayBooks(){
-    
+    foreach(Book e in BookList)
+            {
+              Console.WriteLine(e.Book.Display());
+  }
   }
 }
