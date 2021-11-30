@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 class Author : Person
@@ -23,10 +24,20 @@ class Author : Person
     base.Intro();
     Console.WriteLine(Email);
   }
-  public void DisplayBooks(){
-    foreach(Book e in BookList)
-            {
-              Console.WriteLine(e.Book.Display());
+  public void DisplayBooks() {
+    foreach (var book in BookList) {
+      book.Display();
+    }}
+  public void AddBook(Book b)
+  {
+    BookList.Add(b);
+    this.FirstName = FirstName;
+    this.LastName = LastName;
   }
+  public void RemoveBook(string ISBN)
+  {
+    BookList.Remove(BookList.Find(Book => Book.ISBN == ISBN));
   }
+  
+
 }
