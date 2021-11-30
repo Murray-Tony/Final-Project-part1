@@ -12,24 +12,39 @@
         
         public Address PermanentAddress;
 
-        public Person() 
+        public Person() : this("Unknown", "Unknown", DateTime.Today, "Unknown", "Unknown", "Unknown")
         {
-          PermanentAddress = new Address();
-          Console.WriteLine("Person constructor");
         }
-
-        public Person(string fname, string lname) 
+        public Person(string fname) : this(fname, "Unknown", DateTime.Today, "Unknown", "Unknown", "Unknown")
+        {
+        }
+        public Person(string fname, string lname) : this(fname, lname, DateTime.Today, "Unknown", "Unknown", "Unknown")
+        {
+        }
+        public Person(string fname, string lname, DateTime birthday) : this(fname, lname, birthday, "Unknown", "Unknown", "Unknown")
+        {
+        }
+        public Person(string fname, string lname, DateTime birthday, string social) : this(fname, lname, birthday, social, "Unknown", "Unknown")
+        {
+        }
+        public Person(string fname, string lname, DateTime birthday, string social, string email) : this(fname, lname, birthday, social, email, "Unknown")
+        {
+        }
+        public Person(string fname, string lname, DateTime birthday, string social, string email, string phonenumber) 
         {
           FirstName = fname;
           LastName = lname;
+          DateOfBirth = birthday;
+          SocialSecurity = social;
+          Email = email;
+          PhoneNumber = phonenumber;
           PermanentAddress = new Address();
           Console.WriteLine("Person constructor");
         }
 
         public virtual void Intro()
         {
-            Console.WriteLine("Hello my name is *** "+ FirstName +" "+ LastName);
-            PermanentAddress.Display();
+            Console.WriteLine("Hello my name is "+ FirstName +" "+ LastName);
         }
 
         public void IsBirthday()
